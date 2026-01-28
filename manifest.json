@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "DA Films Downloader",
+  "version": "1.0",
+  "description": "Download videos from dafilms.cz",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "downloads",
+    "activeTab",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "DA Films Downloader"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.dafilms.cz/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

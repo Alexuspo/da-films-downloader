@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>DA Films Downloader</title>
+  <style>
+    body { 
+      width: 300px; 
+      padding: 15px; 
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+      border-radius: 8px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    h3 { 
+      margin: 0 0 10px 0; 
+      color: #333;
+      text-align: center;
+    }
+    .video-item {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px;
+      margin: 5px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .video-info {
+      flex: 1;
+      font-size: 12px;
+      word-break: break-all;
+    }
+    button { 
+      padding: 5px 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    button:hover { background: #0056b3; }
+    #clear { 
+      width: 100%;
+      margin-top: 10px;
+      background: #dc3545;
+    }
+    #clear:hover { background: #c82333; }
+    #status { 
+      text-align: center; 
+      margin-top: 10px; 
+      font-weight: bold;
+      color: #28a745;
+    }
+  </style>
+</head>
+<body>
+  <h3>DA Films Downloader</h3>
+  <div id="videos"></div>
+  <button id="clear">Clear List</button>
+  <div id="status">Monitoring active</div>
+  <script src="popup.js"></script>
+</body>
+</html>
