@@ -48,6 +48,22 @@ The extension monitors network requests and page content for video files. Detect
 - Downloads are saved to your default download folder
 - List keeps up to 10 most recent videos
 
+## Disclaimer
+
+DA Films Downloader is an open-source project licensed under MIT and its code is distributed for educational and personal use only.
+
+By using this software, you agree to the following terms:
+
+- The software is not intended to facilitate any form of illegal activity, including unauthorized downloading, copying, converting, or distribution of copyrighted material. The software must not be used to bypass, circumvent, or interfere with any digital rights management systems.
+
+- Users are solely responsible for ensuring that their use of DA Films Downloader complies with all applicable laws in their respective jurisdiction.
+
+- DA Films Downloader is not affiliated with, endorsed by, or associated with dafilms.cz or any other video streaming platforms. All mentioned services, trademarks, and images in use by this project remain the property of their respective owners.
+
+- The developers and contributors assume no liability for any misuse of the software or its source code.
+
+- DA Films Downloader is provided "as is", without warranties of any kind, expressed or implied. The software must not be used for commercial purposes without explicit permission.
+
 ## License
 
 MIT License - see [LICENSE](LICENSE) file for details

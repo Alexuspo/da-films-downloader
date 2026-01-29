@@ -4,22 +4,23 @@
   "version": "1.0",
   "description": "Download videos from dafilms.cz",
   "permissions": [
-    "webRequest",
-    "webRequestBlocking",
     "downloads",
-    "activeTab",
-    "tabs",
     "storage"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "*://*.dafilms.cz/*"
   ],
   "background": {
     "scripts": ["background.js"]
   },
   "browser_action": {
     "default_popup": "popup.html",
-    "default_title": "DA Films Downloader"
+    "default_title": "DA Films Downloader",
+    "default_icon": "icon.svg"
+  },
+  "icons": {
+    "48": "icon.svg",
+    "96": "icon.svg"
   },
   "content_scripts": [
     {

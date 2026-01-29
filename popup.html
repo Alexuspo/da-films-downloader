@@ -4,64 +4,204 @@
   <meta charset="utf-8">
   <title>DA Films Downloader</title>
   <style>
-    body { 
-      width: 300px; 
-      padding: 15px; 
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
-      border-radius: 8px;
-      max-height: 400px;
+    body {
+      width: 320px;
+      min-height: 200px;
+      padding: 0;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .header h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .content {
+      padding: 16px;
+      max-height: 300px;
       overflow-y: auto;
     }
-    h3 { 
-      margin: 0 0 10px 0; 
-      color: #333;
+
+    .empty-state {
       text-align: center;
+      color: #666;
+      padding: 32px 16px;
+      font-size: 14px;
     }
+
+    .empty-state svg {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 12px;
+      opacity: 0.5;
+    }
+
     .video-item {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      padding: 10px;
-      margin: 5px 0;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      padding: 12px;
+      margin-bottom: 8px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border: 1px solid #e9ecef;
+      transition: all 0.2s ease;
     }
+
+    .video-item:hover {
+      background: #e9ecef;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .video-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 12px;
+      color: #6c757d;
+      flex-shrink: 0;
+    }
+
     .video-info {
       flex: 1;
-      font-size: 12px;
-      word-break: break-all;
+      font-size: 13px;
+      color: #495057;
+      word-break: break-word;
+      line-height: 1.4;
     }
-    button { 
-      padding: 5px 10px;
-      background: #007bff;
+
+    .video-filename {
+      font-weight: 500;
+      color: #212529;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .video-meta {
+      font-size: 11px;
+      color: #6c757d;
+    }
+
+    .download-btn {
+      background: #28a745;
       color: white;
       border: none;
-      border-radius: 4px;
-      cursor: pointer;
+      border-radius: 6px;
+      padding: 8px 12px;
       font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
     }
-    button:hover { background: #0056b3; }
-    #clear { 
-      width: 100%;
-      margin-top: 10px;
+
+    .download-btn:hover {
+      background: #218838;
+      transform: translateY(-1px);
+    }
+
+    .download-btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .footer {
+      padding: 12px 16px;
+      border-top: 1px solid #e9ecef;
+      background: #f8f9fa;
+      text-align: center;
+    }
+
+    .clear-btn {
       background: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
-    #clear:hover { background: #c82333; }
-    #status { 
-      text-align: center; 
-      margin-top: 10px; 
-      font-weight: bold;
-      color: #28a745;
+
+    .clear-btn:hover {
+      background: #c82333;
+    }
+
+    .clear-btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Scrollbar styling */
+    .content::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .content::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 3px;
+    }
+
+    .content::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 3px;
+    }
+
+    .content::-webkit-scrollbar-thumb:hover {
+      background: #a8a8a8;
     }
   </style>
 </head>
 <body>
-  <h3>DA Films Downloader</h3>
-  <div id="videos"></div>
-  <button id="clear">Clear List</button>
-  <div id="status">Monitoring active</div>
+  <div class="header">
+    <h3>🎬 DA Films Downloader</h3>
+  </div>
+
+  <div class="content">
+    <div id="videos">
+      <div class="empty-state">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+          <path d="M9 9v6"/>
+          <path d="M12 9v6"/>
+        </svg>
+        <div>No videos detected yet</div>
+        <div style="font-size: 12px; margin-top: 4px;">Play a video on dafilms.cz to see it here</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <button id="clear" class="clear-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M3 6h18"/>
+        <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+        <path d="M10 11v6"/>
+        <path d="M14 11v6"/>
+      </svg>
+      Clear List
+    </button>
+  </div>
+
   <script src="popup.js"></script>
 </body>
 </html>
