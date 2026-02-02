@@ -4,6 +4,11 @@ Firefox extension to download videos from dafilms.cz.
 
 ## Installation
 
+### From Firefox Add-ons
+
+1. Install directly from [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/da-films-downloader/)
+2. Click "Add to Firefox" and confirm the permission prompt
+
 ### From Source
 
 1. Clone this repository

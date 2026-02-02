@@ -5,9 +5,7 @@
   "description": "Download videos from dafilms.cz",
   "permissions": [
     "downloads",
-    "storage"
-  ],
-  "host_permissions": [
+    "storage",
     "*://*.dafilms.cz/*"
   ],
   "background": {
@@ -27,5 +25,14 @@
       "matches": ["*://*.dafilms.cz/*"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "da-films-downloader@addon.mozilla.org",
+      "strict_min_version": "109.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
 }
