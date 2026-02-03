@@ -1,4 +1,5 @@
 # DA Films Downloader
+<img width="60" height="60" alt="dflogo" src="https://github.com/user-attachments/assets/b5addfbe-90d3-41f0-b8e8-1eeb4813024b" />
 
 Firefox extension to download videos from dafilms.cz.
 
