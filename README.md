@@ -1,5 +1,6 @@
 # DA Films Downloader
 
+
 Firefox extension to download videos from dafilms.cz.
 
 ## Installation
