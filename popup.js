@@ -13,7 +13,7 @@ function loadVideos() {
             <path d="M12 9v6"/>
           </svg>
           <div>No videos detected yet</div>
-          <div style="font-size: 12px; margin-top: 4px;">Play a video on dafilms.cz to see it here</div>
+          <div style="font-size: 12px; margin-top: 4px;">Play a video on dafilms.cz or dafilms.com to see it here</div>
         </div>
       `;
       return;
