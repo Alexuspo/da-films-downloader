@@ -2,7 +2,7 @@
 <img width="100" height="100" alt="Dafilmsdo" src="https://github.com/user-attachments/assets/5988fa5b-b3df-4a10-898b-a2765ed0588a" />
 
 
-Firefox extension to download videos from dafilms.cz.
+Firefox extension to download videos from dafilms.cz and dafilms.com.
 
 ## Installation
 
@@ -38,7 +38,7 @@ This will create `da-films-downloader.xpi` in the project root.
 
 ## Usage
 
-1. Navigate to dafilms.cz (any page or subpage).
+1. Navigate to dafilms.cz or dafilms.com (any page or subpage).
 2. The extension automatically detects video streams and adds them to the popup list.
 3. Click the extension icon to open the popup.
 4. Click "Download" next to any detected video to download it.
@@ -50,7 +50,7 @@ The extension monitors network requests and page content for video files. Detect
 
 ## Notes
 
-- Works on all pages under dafilms.cz and detects videos from external sources
+- Works on all pages under dafilms.cz and dafilms.com and detects videos from external sources
 - Videos are not downloaded automatically - you choose which ones to download
 - Downloads are saved to your default download folder
 - List keeps up to 10 most recent videos
@@ -65,7 +65,7 @@ By using this software, you agree to the following terms:
 
 - Users are solely responsible for ensuring that their use of DA Films Downloader complies with all applicable laws in their respective jurisdiction.
 
-- DA Films Downloader is not affiliated with, endorsed by, or associated with dafilms.cz or any other video streaming platforms. All mentioned services, trademarks, and images in use by this project remain the property of their respective owners.
+- DA Films Downloader is not affiliated with, endorsed by, or associated with dafilms.cz, dafilms.com, or any other video streaming platforms. All mentioned services, trademarks, and images in use by this project remain the property of their respective owners.
 
 - The developers and contributors assume no liability for any misuse of the software or its source code.
 
